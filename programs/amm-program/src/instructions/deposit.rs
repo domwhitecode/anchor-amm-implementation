@@ -91,7 +91,7 @@ impl<'info> Deposit<'info> {
         max_y: u64
     ) -> Result<()> {
 
-        // Not really necessary because if the config is locked the tx fails
+        // Not really necessary because if the config is locked the tx should fail
         // anyway 
         require!(!self.config.locked, AmmError::PoolLocked);
         require_neq!(amount, 0, AmmError::InvalidAmount);

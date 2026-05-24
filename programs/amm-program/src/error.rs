@@ -32,7 +32,9 @@ pub enum AmmError {
     #[msg("Slippage Limit Exceeded")]
     SlippageLimitExceeded,
     #[msg("XY deposit/withdraw amounts from l failed")]
-    XYCalculationFailed
+    XYCalculationFailed,
+    #[msg("Failed to initialize the CPMM curve")]
+    CPMMInitFail
 
 }
 
