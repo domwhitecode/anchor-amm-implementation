@@ -79,7 +79,7 @@ pub struct Withdraw<'info> {
 
 impl<'info> Withdraw<'info> {
 
-    pub fn deposit(
+    pub fn withdraw(
         &mut self,
         amount: u64,
         min_x: u64,
