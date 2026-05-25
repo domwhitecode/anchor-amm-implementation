@@ -106,9 +106,9 @@ impl<'info> Deposit<'info> {
                 let amounts: XYAmounts = ConstantProduct::xy_deposit_amounts_from_l(
                     self.vault_x.amount, 
                     self.vault_y.amount, 
-                    self.mint_lp.supply, 
+                    self.mint_lp.supply,
                     amount,
-                    6,
+                    1_000_000,
                 ).map_err(|_| AmmError::XYCalculationFailed)?;
                 
                 require!(
