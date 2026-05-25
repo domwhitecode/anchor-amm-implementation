@@ -1,5 +1,3 @@
-use std::io::Bytes;
-
 use anchor_lang::prelude::*;
 
 #[constant]

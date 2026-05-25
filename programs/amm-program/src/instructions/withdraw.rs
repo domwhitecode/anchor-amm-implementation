@@ -3,7 +3,7 @@ use anchor_spl:: {
     associated_token::AssociatedToken,
     token::{burn, transfer, Burn, Mint, Token, TokenAccount, Transfer },
 };
-use constant_product_curve::{ConstantProduct, CurveError, XYAmounts};
+use constant_product_curve::{ConstantProduct, XYAmounts};
 
 use crate::{CONFIG_SEED, LP_SEED, error::AmmError, state::Config};
 

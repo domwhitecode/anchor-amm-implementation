@@ -1,9 +1,9 @@
 use anchor_lang::prelude::*;
 use anchor_spl:: {
     associated_token::AssociatedToken,
-    token::{Mint, Token, TokenAccount, Transfer, revoke, transfer },
+    token::{Mint, Token, TokenAccount, Transfer, transfer },
 };
-use constant_product_curve::{ConstantProduct, CurveError, LiquidityPair, SwapResult};
+use constant_product_curve::{ConstantProduct, LiquidityPair};
 
 use crate::{CONFIG_SEED, LP_SEED, error::AmmError, state::Config };
 

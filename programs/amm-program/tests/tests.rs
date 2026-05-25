@@ -116,7 +116,7 @@ fn test_withdraw() {
         &mut svm, &payer, mint_x, mint_y, config, mint_lp, vault_x, vault_y
     );
     let withdraw_ix = create_withdraw_ix(
-        &mut svm, &payer, mint_x, mint_y, config, mint_lp, vault_x, vault_y
+        &payer, mint_x, mint_y, config, mint_lp, vault_x, vault_y
     );
 
     let res = send(&mut svm, &[init_ix, deposit_ix, withdraw_ix], &payer, &[&payer]);
