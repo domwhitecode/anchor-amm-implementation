@@ -76,8 +76,6 @@ fn setup() -> (
 
 }
 
-// TODO: assert states
-
 #[test]
 fn test_initialize() {
     let (mut svm, payer, mint_x, mint_y, config, mint_lp, vault_x, vault_y) = setup();
