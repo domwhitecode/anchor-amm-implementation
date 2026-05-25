@@ -135,7 +135,7 @@ fn test_swap() {
         &mut svm, &payer, mint_x, mint_y, config, mint_lp, vault_x, vault_y
     );
     let swap_ix = create_swap_ix(
-        &mut svm, &payer, mint_x, mint_y, config, mint_lp, vault_x, vault_y
+        &payer, mint_x, mint_y, config, mint_lp, vault_x, vault_y
     );
 
     let res = send(&mut svm, &[init_ix, deposit_ix, swap_ix], &payer, &[&payer]);
