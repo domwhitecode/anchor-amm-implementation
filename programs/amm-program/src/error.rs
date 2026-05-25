@@ -2,13 +2,9 @@ use anchor_lang::prelude::*;
 use constant_product_curve::CurveError;
 
 #[error_code]
-pub enum ErrorCode {
+pub enum AmmError {
     #[msg("Custom error message")]
     CustomError,
-}
-
-#[error_code]
-pub enum AmmError {
     #[msg("Pool is locked, try again later")]
     PoolLocked,
 
@@ -34,12 +30,11 @@ pub enum AmmError {
     #[msg("XY deposit/withdraw amounts from l failed")]
     XYCalculationFailed,
     #[msg("Failed to initialize the CPMM curve")]
-    CPMMInitFail
-
+    CPMMInitFail,
 }
 
 impl From<CurveError> for AmmError {
-    fn from (error: CurveError) -> AmmError {
+    fn from(error: CurveError) -> AmmError {
         match error {
             CurveError::InvalidPrecision => AmmError::InvalidPrecision,
             CurveError::Overflow => AmmError::OverFlow,

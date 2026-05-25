@@ -57,13 +57,13 @@ pub struct Deposit<'info> {
         associated_token::mint = mint_x,
         associated_token::authority = user,
     )]
-    pub user_x: Account<'info, TokenAccount>,
+    pub user_x: Box<Account<'info, TokenAccount>>,
     #[account(
         mut,
         associated_token::mint = mint_y,
         associated_token::authority = user,
     )]
-    pub user_y: Account<'info, TokenAccount>,
+    pub user_y: Box<Account<'info, TokenAccount>>,
 
 
     // need to have an associated token account 
@@ -76,7 +76,7 @@ pub struct Deposit<'info> {
         associated_token::mint = mint_lp,
         associated_token::authority = user,
     )]
-    pub user_lp: Account<'info, TokenAccount>,
+    pub user_lp: Box<Account<'info, TokenAccount>>,
     pub token_program: Program<'info, Token>,
     pub associated_token_program: Program<'info, AssociatedToken>,
     pub system_program: Program<'info, System>

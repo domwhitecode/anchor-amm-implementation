@@ -41,8 +41,8 @@ pub fn create_swap_ix(
             user_x,
             user_y,
             token_program: TOKEN_PROGRAM_ID,
-            system_account: ASSOCIATED_TOKEN_PROGRAM_ID,
-            associated_token_account: SYSTEM_PROGRAM_ID,
+            system_account: SYSTEM_PROGRAM_ID,
+            associated_token_account: ASSOCIATED_TOKEN_PROGRAM_ID,
         }
         .to_account_metas(None),
     )

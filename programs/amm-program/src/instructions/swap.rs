@@ -50,13 +50,13 @@ pub struct Swap<'info> {
         associated_token::mint = mint_x,
         associated_token::authority = user,
     )]
-    pub user_x: Account<'info, TokenAccount>,
+    pub user_x: Box<Account<'info, TokenAccount>>,
     #[account(
         mut,
         associated_token::mint = mint_y,
         associated_token::authority = user,
     )]
-    pub user_y: Account<'info, TokenAccount>,
+    pub user_y: Box<Account<'info, TokenAccount>>,
 
     // program accounts
     pub token_program: Program<'info, Token>,
@@ -144,9 +144,9 @@ impl<'info> Swap<'info> {
         let cpi_accounts: Transfer<'_> = Transfer {
             from,
             to,
-            authority: self.user.to_account_info(),
+            authority: self.config.to_account_info(),
         };
-        // from is vault whos auth is config which is a pda 
+        // from is vault whos auth is config which is a pda
         let signer_seeds: &[&[&[u8]]] = &[&[
             CONFIG_SEED,
             &self.config.seed.to_le_bytes(),
