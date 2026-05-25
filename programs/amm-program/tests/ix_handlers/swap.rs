@@ -2,7 +2,6 @@ use anchor_lang::solana_program::system_program::ID as SYSTEM_PROGRAM_ID;
 use anchor_lang::{InstructionData, ToAccountMetas};
 use anchor_spl::associated_token::{self, ID as ASSOCIATED_TOKEN_PROGRAM_ID};
 use anchor_spl::token::ID as TOKEN_PROGRAM_ID;
-use litesvm::LiteSVM;
 use solana_keypair::Keypair;
 use solana_message::Instruction;
 use solana_pubkey::Pubkey;
